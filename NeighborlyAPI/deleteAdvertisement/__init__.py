@@ -1,7 +1,9 @@
 import azure.functions as func
 import pymongo
 from bson.objectid import ObjectId
-
+# NganMTK
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -9,9 +11,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if id:
         try:
-            url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            # NganMTK
+            url = os.environ["CosmosDBConnectionString"]  # TODO: Update with appropriate MongoDB connection information
             client = pymongo.MongoClient(url)
-            database = client['azure']
+            database = client['admin-prj2']
             collection = database['advertisements']
             
             query = {'_id': ObjectId(id)}

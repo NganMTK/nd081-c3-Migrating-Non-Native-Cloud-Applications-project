@@ -13,8 +13,6 @@ from werkzeug.contrib.atom import AtomFeed
 app = Flask(__name__)
 Bootstrap(app)
 
-
-
 def get_abs_url(url):
     """ Returns absolute url by joining post url with base url """
     return urljoin(request.url_root, url)
