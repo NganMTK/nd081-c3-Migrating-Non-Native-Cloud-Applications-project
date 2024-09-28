@@ -5,7 +5,7 @@ from bson.json_util import dumps
 from bson.objectid import ObjectId
 # NganMTK
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -16,7 +16,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             # NganMTK
             url = os.environ["CosmosDBConnectionString"]  # TODO: Update with appropriate MongoDB connection information
             client = pymongo.MongoClient(url)
-            database = client['admin-prj2']
+            database = client['CosmosDBProject2']
             collection = database['posts']
 
             query = {'_id': ObjectId(id)}

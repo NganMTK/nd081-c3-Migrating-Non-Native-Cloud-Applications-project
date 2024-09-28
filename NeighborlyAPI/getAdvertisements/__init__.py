@@ -4,7 +4,7 @@ import json
 from bson.json_util import dumps
 # NganMTK
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -12,7 +12,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         # NganMTK
         url = os.environ["CosmosDBConnectionString"]  # TODO: Update with appropriate MongoDB connection information
         client = pymongo.MongoClient(url)
-        database = client['admin-prj2']
+        database = client['CosmosDBProject2']
         collection = database['advertisements']
 
 
