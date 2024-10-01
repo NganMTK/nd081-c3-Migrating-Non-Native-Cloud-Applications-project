@@ -16,4 +16,6 @@ API_VERSION = 'v1'
 #API_URL = " https://neighborlyapi.azurewebsites.net/api/"
 
 # for local host if Azure functions served locally
-API_URL = "http://localhost:7071/api"
+# API_URL = "http://localhost:7071/api"
+# NganMTK
+API_URL = "https://udacity-function-app.azurewebsites.net/api"
