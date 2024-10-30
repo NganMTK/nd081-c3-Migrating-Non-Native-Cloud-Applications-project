@@ -63,9 +63,17 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* |Burstable, B1ms, 1vCores, 2GiB RAM, 32 GiB storage    |   $12.41/month           |
+| *Azure Service Bus*   | Basic        | 	$0.05 per million operations             |
+| *Azure Storage account* | Data storage - hot tier  |  $0.018 per GB - First 50 terabyte (TB) / month            |
+| *Azure App Service* | Free(F1) | $0 |
+| *Azure Function* | Consumption  | $0.20 per million executions |
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+
+In Azure web app, I created Azure Web App use Free tier. The F1 tier has 60 CPU minutes per day with no cost.
+that is suitable for the current test project.  
+In function app, I choose Azure Funtions Consumption plan to hosting backend app. 
+Consumption plan includes a free grant of 1 million requests per month.
+The price is reasonable for the current testing phase and the volume of the app.                         
